@@ -400,6 +400,8 @@ section {
   color: var(--second-title-color);
 }
 
+.work-box {}
+
 /*------------------------------------ABOUT TEAM-----------------*/
 
 .about-list {
@@ -795,6 +797,10 @@ section {
   right: 10px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .is-hidden {
@@ -805,13 +811,4 @@ section {
 
 .no-scroll {
   overflow: hidden;
-}
-
-.close-icon {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
 }
