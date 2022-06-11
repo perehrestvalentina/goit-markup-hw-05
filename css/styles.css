@@ -213,7 +213,6 @@ section {
   display: inline-block;
   margin-right: 10px;
   justify-content: center;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .color {
@@ -353,7 +352,8 @@ section {
 .btn-title:focus {
   background-color: var(--accente-color);
   color: var(--main-btn-color);
-  border: var(--accente-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+  ;
 }
 
 .btn-title {
@@ -361,10 +361,19 @@ section {
   border-radius: 4px;
   padding: 6px 22px;
   min-width: 73px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--second-title-color);
+
   text-align: center;
   border: transparent;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-text {
@@ -381,16 +390,6 @@ section {
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--second-title-color);
-}
-
-.btn-title {
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.62;
-  text-align: center;
-  letter-spacing: 0.03em;
   color: var(--second-title-color);
 }
 
@@ -498,11 +497,12 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-icon {
   fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link:hover,
@@ -551,7 +551,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link:hover,
@@ -561,6 +561,7 @@ section {
 
 .client-icon {
   fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-item:last-child {
@@ -586,9 +587,11 @@ section {
   margin-bottom: 30px;
 }
 
-.projects-item:hover .projects-top-text {
+.projects-link:hover .projects-top-text,
+.projects-link:focus .projects-top-text {
   transform: translateY(0);
 }
+
 
 .projects-top-wrap {
   position: relative;
@@ -612,35 +615,14 @@ section {
   transition: transform 300ms linear;
 }
 
-/*-------------------------*/
-.work-box {
-  position: relative;
-}
 
-.work-top-text {
-  position: absolute;
-  bottom: 0;
-
-  width: 370px;
-  height: 70px;
-  font-size: 14px;
-  line-height: 1.14;
-  display: flex;
-  padding: 27px 80px;
-  justify-content: center;
-  text-transform: uppercase;
-  background: rgba(47, 48, 58, 0.8);
-  color: #FFFFFF;
-}
-
-
-/*----------------------------------*/
 .projects-link:hover,
 .projects-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .projects-link {
+  display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -674,6 +656,28 @@ section {
   line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--third-title-color);
+}
+
+/*---------------------------------------------------*/
+
+.work-box {
+  position: relative;
+}
+
+.work-top-text {
+  position: absolute;
+  bottom: 0;
+
+  width: 370px;
+  height: 70px;
+  font-size: 14px;
+  line-height: 1.14;
+  display: flex;
+  padding: 27px 80px;
+  justify-content: center;
+  text-transform: uppercase;
+  background: rgba(47, 48, 58, 0.8);
+  color: #FFFFFF;
 }
 
 /*------------------------------------FOOTER-----------------*/
@@ -767,11 +771,12 @@ section {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  transition: backgrond-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: backgrond-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .wrapper-icon {
   fill: var(--main-btn-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .wrapper-link:hover,
